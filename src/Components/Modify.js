@@ -2,37 +2,42 @@ import React from 'react'
 import Navbar from './Navbar'
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const Modify = () => {
 
-    const data = [
+    const [data, setData] = useState([
         {
-            "id": "6ab4",
-            "Date": "2-2-2",
-            "InvoiceNumber": "F",
-            "CustomerName": "Nithin",
-            "BillingAddress":"ramanthapur",
-            "ShippingAddress":"uppal",
-            "GSTIn":"0",
-            "Items":["rice","sugar"],
-            "BillSundrys":["rice","sugar"],
-            "TotalAmount":"0",
+          id: "6ab4",
+          Date: "2-2-2",
+          InvoiceNumber: "F",
+          CustomerName: "Nithin",
+          BillingAddress: "ramanthapur",
+          ShippingAddress: "uppal",
+          GSTIn: "0",
+          Items: ["rice", "sugar"],
+          BillSundrys: ["rice", "sugar"],
+          TotalAmount: "0",
         },
         {
-            "id": "6ab2",
-            "Date": "2-2-2",
-            "InvoiceNumber": "F",
-            "CustomerName": "Nithin",
-            "BillingAddress":"ramanthapur",
-            "ShippingAddress":"uppal",
-            "GSTIn":"0",
-            "Items":["rice","sugar"],
-            "BillSundrys":["rice","sugar"],
-            "TotalAmount":"0",
-        }
-    ];
+          id: "6ab2",
+          Date: "2-2-2",
+          InvoiceNumber: "F",
+          CustomerName: "Nithin",
+          BillingAddress: "ramanthapur",
+          ShippingAddress: "uppal",
+          GSTIn: "0",
+          Items: ["rice", "sugar"],
+          BillSundrys: ["rice", "sugar"],
+          TotalAmount: "0",
+        },
+      ]);
 
     const { id } = useParams();
+
+    const handleChange =() => {
+
+    }
 
   return (
 
@@ -50,10 +55,10 @@ const Modify = () => {
             {
                       return (
                         <>
-                          <p><strong>ID:</strong>{item.id}</p>
+                          <p ><strong>ID:</strong>{item.id}</p>
                           <p><strong>Date:</strong>{item.Date}</p>
                           <p><strong>InvoiceNumber:</strong>{item.InvoiceNumber}</p>
-                          <p><strong>CustomerName:</strong>{item.CustomerName}</p>
+                          <p><strong >CustomerName:</strong>{item.CustomerName}</p>
                           <p><strong>BillingAddress:</strong>{item.BillingAddress}</p>
                           <p><strong>ShippingAddress:</strong>{item.ShippingAddress}</p>
                           <p><strong>GSTIN:{item.GSTIn}</strong></p>
@@ -64,6 +69,8 @@ const Modify = () => {
                       );
                     }
                     })}
+
+
         </div>
       </div>
     </div>
@@ -72,3 +79,4 @@ const Modify = () => {
 }
 
 export default Modify
+
